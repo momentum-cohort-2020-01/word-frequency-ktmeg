@@ -1,5 +1,7 @@
 import string
 
+from collections import Counter
+
 STOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
@@ -7,7 +9,7 @@ STOP_WORDS = [
 ]
 
 
-with open('seneca_falls.txt', 'r') as f:
+with open('seneca_falls.txt') as f:
     data = f.read()
 
 translator = str.maketrans("","", string.punctuation)
@@ -17,14 +19,17 @@ data = data.lower()
 words = data.split()
 new_data = list(filter(lambda w: w not in STOP_WORDS, words))
 
-
-def get_word_frequency(new_data):
-    for entry in new_data:
-        print('Frequency of', entry, 'is:', new_data.count(entry))
+counts = Counter(new_data)
+print(counts)
 
 
-if __name__ == "__main__":
-    get_word_frequency(new_data)
+# def get_word_frequency(new_data):
+#     for entry in new_data:
+#         print('Frequency of', entry, 'is:', new_data.count(entry))
+
+
+# if __name__ == "__main__":
+#     get_word_frequency(new_data)
 
 #     import argparse
 #     from pathlib import Path
