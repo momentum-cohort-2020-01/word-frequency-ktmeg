@@ -23,6 +23,8 @@ counts = Counter(new_data)
 print(counts)
 
 
+# this function works, but repeats count occurances
+
 # def get_word_frequency(new_data):
 #     for entry in new_data:
 #         print('Frequency of', entry, 'is:', new_data.count(entry))
@@ -30,6 +32,10 @@ print(counts)
 
 # if __name__ == "__main__":
 #     get_word_frequency(new_data)
+
+
+
+
 
 #     import argparse
 #     from pathlib import Path
